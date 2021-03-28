@@ -1,0 +1,12 @@
+<div class="spinner-border text-danger" role="status" *ngIf="dataLoaded==false">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<table class="table">
+  <tr *ngFor="let brand of brands">
+    <td>{{brand.id}}</td>
+    <td>{{brand.name}}</td>
+  </tr>
+</table>
+
+
