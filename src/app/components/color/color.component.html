@@ -1,1 +1,11 @@
-<p>color works!</p>
+<table class="table"> <thead>
+  <tr>
+    <th scope="col">Renk</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let color of colors">
+    <td>{{color.name}}</td>
+  </tr>
+</tbody>
+</table>

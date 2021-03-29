@@ -1,1 +1,17 @@
-<p>customer works!</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Müşteri Ad/Soyad</th>
+    <th scope="col">Adres</th>
+    <th scope="col">Mail</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let customer of customers">
+  <td>{{customer.firstName}} {{customer.lastName}}</td>
+  <td>{{customer.address}}</td>
+  <td>{{customer.email}}</td>
+</tr>
+</tbody>
+
+</table>

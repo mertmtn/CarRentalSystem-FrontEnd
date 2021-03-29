@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/models/car';
-import { CarResponseModel } from 'src/app/models/responseModel/carResponseModel';
 import { CarService } from 'src/app/services/car/car.service';
 
 @Component({
@@ -12,11 +11,7 @@ export class CarComponent implements OnInit {
   dataLoaded: boolean=false;
   cars: Car[]=[];
 
-  carResponseModel:CarResponseModel={
-    data:this.cars,
-    message:"",
-    success:true
-  };
+
   constructor(private carService:CarService) { }
 
   ngOnInit(): void {

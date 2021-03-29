@@ -2,9 +2,18 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<table class="table">
+<table class="table">  <thead>
+  <tr>
+    <th scope="col">Araba Adı</th>
+    <th scope="col">Marka Adı</th>
+    <th scope="col">Rengi</th>
+  </tr>
+</thead>
+<tbody>
   <tr *ngFor="let car of cars">
     <td>{{car.carName}}</td>
     <td>{{car.brandName}}</td>
+    <td>{{car.colorName}}</td>
   </tr>
+</tbody>
 </table>

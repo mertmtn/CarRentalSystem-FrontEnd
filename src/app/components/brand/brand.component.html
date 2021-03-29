@@ -3,10 +3,18 @@
 </div>
 
 <table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Marka Adı</th>
+  </tr>
+</thead>
+<tbody>
   <tr *ngFor="let brand of brands">
     <td>{{brand.id}}</td>
     <td>{{brand.name}}</td>
   </tr>
+</tbody>
 </table>
 
 
