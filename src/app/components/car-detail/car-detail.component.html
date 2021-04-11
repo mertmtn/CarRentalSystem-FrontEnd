@@ -1,0 +1,41 @@
+<div class="container bootdey">
+  <div class="col-md-12">
+    <section class="panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro-img-details">
+              <img src="{{imagePreviewSrc}}" alt="">
+            </div>
+            <div class="pro-img-list">
+              <a href="#" *ngFor="let item of car.carImageList">
+                <img (mouseover)="onMouseOverImg(item)" src="https://localhost:44357{{item.imagePath}}" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h1>
+              {{car.carName}}
+            </h1>
+            <p>
+              {{car.carDescription}}
+            </p>
+            <div class="product_meta">
+              <span class="posted_in"> <strong>Marka:</strong> {{car.brandName}} </span>
+              <span class="tagged_as"><strong>Model:</strong> {{car.modelYear}} </span>
+              <span class="tagged_as"><strong>Renk:</strong> {{car.colorName}} </span>
+            </div>
+            <div class="m-bot15"> <strong>Günlük Kiralama Bedeli : </strong> <span class="pro-price"> {{car.dailyPrice|
+                currency :"₺"}}</span></div>
+            <p>
+              <button class="btn btn-round btn-primary" routerLink="/app-rental-add" type="button"> Aracı
+                Kirala</button>
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>

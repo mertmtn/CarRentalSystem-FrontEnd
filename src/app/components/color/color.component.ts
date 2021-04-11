@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/car';
 import { Color } from 'src/app/models/color';
+import { CarService } from 'src/app/services/car/car.service';
 import { ColorService } from 'src/app/services/color/color.service';
 
 @Component({
@@ -9,15 +11,20 @@ import { ColorService } from 'src/app/services/color/color.service';
 })
 
 export class ColorComponent implements OnInit {
-  dataLoaded: boolean=false;
+
   colors: Color[]=[];
-  constructor(private colorService:ColorService) { }
+
+  filterColorText='';
+  constructor(private colorService:ColorService ) { }
 
   ngOnInit(): void {
     this.colorService.getColors().subscribe((response)=>{
       this.colors=response.data;
-      this.dataLoaded=true;
+
     });
   }
+
+
+
 
 }

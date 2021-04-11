@@ -11,16 +11,19 @@ import { BrandService } from 'src/app/services/brand/brand.service';
 })
 export class BrandComponent implements OnInit {
   brands:Brand[]=[];
-  dataLoaded:boolean=false;
-
-
+  currentBrand:Brand;
+  filterBrandText='';
   constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
     this.brandService.getBrands().subscribe((response)=>{
       this.brands=response.data;
-      this.dataLoaded=true;
+
     });
+  }
+
+  getCarByBrandId(brand:Brand){
+    console.log(brand.name);
   }
 
 }

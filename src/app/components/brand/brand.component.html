@@ -1,18 +1,19 @@
-<div class="spinner-border text-danger" role="status" *ngIf="dataLoaded==false">
-  <span class="visually-hidden">Loading...</span>
-</div>
 
+<div class="mb-3">
+  <label for="filterBrandText" class="form-label">Marka Arama</label>
+  <input type="text"  [(ngModel)]="filterBrandText"  class="form-control" id="filterBrandText" placeholder="Aranacak ifadeyi giriniz!">
+</div>
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">#</th>
     <th scope="col">Marka Adı</th>
+    <th scope="col">İşlem</th>
   </tr>
 </thead>
 <tbody>
-  <tr *ngFor="let brand of brands">
-    <td>{{brand.id}}</td>
+  <tr *ngFor="let brand of brands | filterBrandPipe : filterBrandText">
     <td>{{brand.name}}</td>
+    <td><button routerLink="/app-car/brand/{{brand.id}}" class="btn btn-success">{{brand.name}}<br>Araba Listesi</button></td>
   </tr>
 </tbody>
 </table>

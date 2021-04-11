@@ -1,20 +1,24 @@
-<table class="table"><thead>
-  <tr>
-    <th scope="col">Kiralayan Kişi</th>
-    <th scope="col">Araba Adı</th>
-    <th scope="col">Marka</th>
-    <th scope="col">Kiralama Tarihi</th>
-    <th scope="col">Teslim Tarihi</th>
-    <th scope="col">Kiralama Ücreti</th>
-  </tr>
-</thead><tbody>  <tr *ngFor="let rental of rentals">
-  <td>{{rental.customerFirstName}} {{rental.customerLastName}}</td>
-  <td>{{rental.carName}}</td>
-  <td>{{rental.brandName}}</td>
-  <td>{{rental.rentDate}}</td>
-  <td>{{rental.returnDate}}</td>
-  <td>{{rental.dailyPrice}}</td>
-</tr>
-</tbody>
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Kiralayan Kişi</th>
+      <th scope="col">Araba Adı</th>
+      <th scope="col">Marka</th>
+      <th scope="col">Kiralama Tarihi</th>
+      <th scope="col">Teslim Tarihi</th>
+      <th scope="col">Kiralama Ücreti</th>
+      <th scope="col">KDV Dahil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rental of rentals">
+      <td>{{rental.customerFirstName}} {{rental.customerLastName}}</td>
+      <td>{{rental.carName}}</td>
+      <td>{{rental.brandName}}</td>
+      <td>{{rental.rentDate | date:'dd.MM.yyyy'}}</td>
+      <td>{{rental.returnDate}}</td>
+      <td>{{rental.dailyPrice| currency :"₺"}}</td>
+      <td>{{rental.dailyPrice| vatAdded:18 | currency :"₺" }}</td>
+    </tr>
+  </tbody>
 </table>

@@ -1,11 +1,26 @@
-<table class="table"> <thead>
-  <tr>
-    <th scope="col">Renk</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let color of colors">
-    <td>{{color.name}}</td>
-  </tr>
-</tbody>
-</table>
+
+<div class="mb-3">
+  <label for="filterColorText" class="form-label">Renk Arama</label>
+  <input type="text"  [(ngModel)]="filterColorText"  class="form-control" id="filterColorText" placeholder="Aranacak ifadeyi giriniz!">
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <table class="table"> <thead>
+      <tr>
+        <th scope="col">Renk</th>
+        <th scope="col">İşlem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let color of colors | filterColorPipe : filterColorText">
+        <td>{{color.name}}</td>
+        <td><button routerLink="/app-car/color/{{color.id}}" class="btn btn-success">{{color.name}}<br>renkli araba listesi</button></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+</div>
+
+

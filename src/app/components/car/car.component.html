@@ -1,19 +1,84 @@
-<div class="spinner-border text-danger" role="status" *ngIf="dataLoaded==false">
-  <span class="visually-hidden">Loading...</span>
-</div>
+<div class="row">
+  <div class="col-md-3">
 
-<table class="table">  <thead>
-  <tr>
-    <th scope="col">Araba Adı</th>
-    <th scope="col">Marka Adı</th>
-    <th scope="col">Rengi</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let car of cars">
-    <td>{{car.carName}}</td>
-    <td>{{car.brandName}}</td>
-    <td>{{car.colorName}}</td>
-  </tr>
-</tbody>
-</table>
+    <div class="mb-3">
+      <label for="filterCarText" class="form-label">Araba Arama</label>
+      <input type="text" [(ngModel)]="filterCarText" class="form-control" id="filterCarText"
+        placeholder="Aranacak ifadeyi giriniz!">
+    </div>
+    <div *ngIf="filterCarText" class="alert alert-primary">
+      {{filterCarText}} aradınız.
+    </div>
+
+    <div class="mb-3"> 
+      <label class="form-label">Marka</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle col-sm-12" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Marka Seçiniz
+        </button>
+        <ul class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" (click)="getCarList()">Tümü</a>
+          </li>
+          <li *ngFor="let brand of brands">
+            <a class="dropdown-item" (click)="getCarListByBrandId(brand.id)">{{brand.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Renk</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle col-sm-12" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Renk Seçiniz
+        </button>
+        <ul class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" (click)="getCarList()">Tümü</a>
+          </li>
+          <li *ngFor="let color of colors"><a class="dropdown-item"
+              (click)="getCarListByColorId(color.id)">{{color.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="col-md-9">
+
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let car of cars | filterPipe : filterCarText">
+        <div class="card" style="width: 18rem;">
+          <ng-container *ngIf="car.carImageList.length>0; else elseTemplate">
+            <img class="card-img-top card-image" src="https://localhost:44357{{car.carImageList[0].imagePath}}">
+
+          </ng-container>
+          <ng-template #elseTemplate>
+            <img class="card-img-top card-image" src="https://localhost:44357/Resources/Images/noImage.png">
+          </ng-template>
+
+          <div class="card-body">
+            <h5 class="card-title">{{car.carName}}</h5>            
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Marka: </strong>{{car.brandName}}</li>  
+            <li class="list-group-item"><strong>Model: </strong>{{car.modelYear}}</li>   
+            <li class="list-group-item"><strong>Kiralama Ücreti: </strong>{{car.dailyPrice| currency :"₺"}}</li>         
+          </ul>
+          <div class="card-body">
+            <button routerLink="/app-car-detail/{{car.carId}}" class="btn btn-info card-link">Araç Detayı</button>
+            <button (click)="addToCart(car)" class="btn btn-success card-link">Sepete Ekle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
