@@ -1,0 +1,30 @@
+<body class="text-center">
+
+  <main class="form-signin">
+    <form [formGroup]="registerForm">
+
+      <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" formControlName="firstName">
+        <label for="floatingInput">Ad</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" formControlName="lastName" >
+        <label for="floatingInput">Soyad</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" formControlName="email" >
+        <label for="floatingInput">E-posta</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" id="floatingPassword">
+        <label for="floatingPassword">Şifre</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" (click)="register()" >KAYDI TAMAMLA</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+  </main>
+
+
+
+    </body>

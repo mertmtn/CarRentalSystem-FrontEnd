@@ -14,10 +14,10 @@ export class BrandAddComponent implements OnInit {
     private toastrService:ToastrService) { }
 
   ngOnInit(): void {
-    this.createProductAddFrom();
+    this.createBrandAddFrom();
   }
 
-  createProductAddFrom(){
+  createBrandAddFrom(){
       this.brandAddForm=this.formBuilder.group({
         id:["",Validators.required],
         name:["",Validators.required]

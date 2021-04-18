@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">RentACar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,9 +28,75 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/app-customer">Müşteri</a>
         </li>
-
         <app-cart-summary></app-cart-summary>
-      </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </ul> -->
+      <!-- <li class="nav-item dropdown d-flex">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Mert Metin
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </li> -->
+
+    <!-- </div>
+
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">RentACar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" id="navbarMarkaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marka</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarMarkaDropdown">
+            <li><a class="dropdown-item"  routerLink="/app-brand" >Marka Listesi</a></li>
+            <li ><a class="dropdown-item" routerLink="/app-brand-add">Marka Ekle</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" id="navbarRenkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Renk</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarRenkDropdown">
+            <li><a class="dropdown-item" routerLink="/app-color" >Renk Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="/app-color-add">Renk Ekle</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/app-company">Şirket</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/app-car">Araba</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/app-rental">Kiralama</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/app-customer">Müşteri</a>
+        </li>
+        <app-cart-summary></app-cart-summary></ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-success me-2" routerLink="/login">Giriş Yap</button>
+        <button class="btn btn-outline-success" routerLink="/register">Kayıt Ol</button>
+      </form>
     </div>
   </div>
 </nav>

@@ -5,11 +5,13 @@ import { BrandComponent } from './components/brand/brand.component';
 import { BrandAddComponent } from './components/brandAdd/brand-add/brand-add.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorComponent } from './components/color/color.component';
 import { CompanyComponent } from './components/company/company.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { LoginComponent } from './components/login/login.component';
- 
+import { RegisterComponent } from './components/register/register.component';
+
 import { RentalComponent } from './components/rental/rental.component';
 
 const routes: Routes = [
@@ -21,13 +23,19 @@ const routes: Routes = [
   },
   { path: 'app-car', component: CarComponent },
   { path: 'app-car/color/:colorId', component: CarComponent },
-  { path: 'app-car/brand/:brandId', component: CarComponent },  
+  { path: 'app-car/brand/:brandId', component: CarComponent },
   { path: 'app-color', component: ColorComponent },
+  {
+    path: 'app-color-add',
+    component: ColorAddComponent
+    ,canActivate: [LoginGuard],
+  },
   { path: 'app-company', component: CompanyComponent },
   { path: 'app-rental', component: RentalComponent },
   { path: 'app-customer', component: CustomerComponent },
   { path: 'app-car-detail/:carId', component: CarDetailComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

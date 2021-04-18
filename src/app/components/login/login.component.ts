@@ -29,9 +29,9 @@ login(){
     let loginModel = Object.assign({},this.loginForm.value)
     this.authService.login(loginModel).subscribe(response=>{
       localStorage.setItem("token",response.data.token)
+      this.toastrService.success(response.message);
     },responseError=>{
       this.toastrService.error(responseError.error);
-
     })
   }
 }

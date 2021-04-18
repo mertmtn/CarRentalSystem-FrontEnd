@@ -24,6 +24,8 @@ import { FilterBrandPipePipe } from './pipes/brand/filter-brand-pipe.pipe';
 import { FilterColorPipePipe } from './pipes/color/filter-color-pipe.pipe';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
  
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { RentalAddComponent } from './components/rental-add/rental-add.component
     BrandAddComponent,
     LoginComponent,
     CarDetailComponent,
-    RentalAddComponent 
+    RentalAddComponent,
+    RegisterComponent,
+    ColorAddComponent 
   
   ],
   imports: [
