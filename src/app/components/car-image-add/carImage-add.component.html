@@ -1,0 +1,15 @@
+
+<form  [formGroup]="addCarImageForm">
+    <div class="form-group">
+        <label for="file">Araba Resmi Ekleyiniz</label>
+        <input
+            id="file"
+            type="file"
+            class="form-control" (change)="onFileSelected($event)">
+    </div>
+    <input type="hidden" id="imagePath" formControlName="imagePath" value="[{{filePath}}]">
+    <input type="hidden" id="carId" formControlName="carId" [value]=carId>
+
+    <button class="btn btn-primary" (click)="addCarImage()">Submit</button>
+
+  </form>

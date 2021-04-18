@@ -10,7 +10,7 @@
       {{filterCarText}} aradınız.
     </div>
 
-    <div class="mb-3"> 
+    <div class="mb-3">
       <label class="form-label">Marka</label>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle col-sm-12" type="button" id="dropdownMenuButton1"
@@ -63,17 +63,24 @@
           </ng-template>
 
           <div class="card-body">
-            <h5 class="card-title">{{car.carName}}</h5>            
+            <h5 class="card-title">{{car.carName}}</h5>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Marka: </strong>{{car.brandName}}</li>  
-            <li class="list-group-item"><strong>Model: </strong>{{car.modelYear}}</li>   
-            <li class="list-group-item"><strong>Kiralama Ücreti: </strong>{{car.dailyPrice| currency :"₺"}}</li>         
+            <li class="list-group-item"><strong>Marka: </strong>{{car.brandName}}</li>
+            <li class="list-group-item"><strong>Model: </strong>{{car.modelYear}}</li>
+            <li class="list-group-item"><strong>Kiralama Ücreti: </strong>{{car.dailyPrice| currency :"₺"}}</li>
           </ul>
           <div class="card-body">
-            <button routerLink="/app-car-detail/{{car.carId}}" class="btn btn-info card-link">Araç Detayı</button>
+            <button routerLink="/app-car-image/{{car.carId}}" class="btn btn-danger">Araç Resim
+              Listesi</button> <button routerLink="/app-carImage-add/{{car.carId}}" class="btn btn-info card-link">Araç
+                Resmi Ekle</button>
+          </div>
+          <div class="card-body">
+            <button routerLink="/app-car-detail/{{car.carId}}" class="btn btn-info card-link">Araç
+              Detayı</button>
             <button (click)="addToCart(car)" class="btn btn-success card-link">Sepete Ekle</button>
           </div>
+
         </div>
       </div>
     </div>

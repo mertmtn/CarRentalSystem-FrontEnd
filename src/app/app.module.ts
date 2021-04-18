@@ -26,7 +26,12 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ColorAddComponent } from './components/color-add/color-add.component';
- 
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
+import { CarImageAddComponent } from './components/car-image-add/carImage-add.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,8 +52,12 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
     CarDetailComponent,
     RentalAddComponent,
     RegisterComponent,
-    ColorAddComponent 
-  
+    ColorAddComponent,
+    CarAddComponent,
+    CarImageComponent,
+    CarImageAddComponent
+
+
   ],
   imports: [
     BrowserModule,
